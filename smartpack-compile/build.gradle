@@ -21,34 +21,5 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId "com.tencent.feilongzou"
-            artifactId "autopack-compile"
-            version "1.0-SNAPSHOT"
-            from components.java
-
-            //配置上传源码
-            artifact sourceJar {
-                classifier "sources"
-            }
-        }
-    }
-    repositories {
-        maven {
-
-//            url "http://maven.oa.com/nexus/content/repositories/thirdparty-snapshots" // change to point to your repo, e.g. http://my.org/repo
-
-            url 'http://maven.oa.com/nexus/content/repositories/thirdparty-snapshots/'
-            //认证用户和密码
-            credentials {
-                username 'rdm'
-                password 'rdm'
-            }
-        }
-    }
-}
 sourceCompatibility = "1.8"
 targetCompatibility = "1.6"
