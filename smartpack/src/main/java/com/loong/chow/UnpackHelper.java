@@ -679,7 +679,7 @@ public class UnpackHelper {
     }
 
     public boolean invalid(int pos) {
-        if (pos < 0 || pos >= bb.limit()) {
+        if (pos <= 0 || pos >= bb.limit()) {
             return true;
         } else {
             return false;
